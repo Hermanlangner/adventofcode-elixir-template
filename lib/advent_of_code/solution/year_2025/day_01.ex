@@ -30,6 +30,9 @@ defmodule AdventOfCode.Solution.Year2025.Day01 do
     pw
   end
 
+  defp rotate_dial(cp, {d, r}) when cp < 0,
+    do: raise("Current Position is less than 0, #{cp} with dir: #{to_string(d)}, rot: #{r}")
+
   defp rotate_dial(0, {:right, 0}), do: 0
 
   defp rotate_dial(0, {:right, rotations}) do
@@ -62,7 +65,7 @@ defmodule AdventOfCode.Solution.Year2025.Day01 do
           "Right Rotation: current position: #{current_position} Fewer rotations #{rotations} than limit #{ticks_until_upper_limit} so returning: #{current_position - rotations}"
         )
 
-        current_position - rotations
+        current_position + rotations
 
       ticks_until_upper_limit == 1 ->
         IO.puts(
