@@ -30,7 +30,7 @@ import Config
 
 config :advent_of_code, AdventOfCode.Input,
   allow_network?: true,
-  session_cookie: "..." # paste your AoC session cookie value here
+  session_cookie: "53616c7465645f5f32a0594ab048ebc1b8fdcc893bc8c41762299f5a78d87b3069a61085b644c3361db389d49c7c37da1b11ba47f6599ef5436fa127691d5e59" # paste your AoC session cookie value here
 ```
 
 Fetch dependencies with
