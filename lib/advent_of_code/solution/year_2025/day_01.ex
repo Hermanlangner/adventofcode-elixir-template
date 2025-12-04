@@ -1,4 +1,14 @@
 defmodule AdventOfCode.Solution.Year2025.Day01 do
+  defp p1_parse_input(input) do
+    input
+    |> String.split("\n")
+    |> Stream.reject(&(&1 == ""))
+    |> Stream.map(fn
+      "L" <> rotations -> {:left, String.to_integer(rotations)}
+      "R" <> rotations -> {:right, String.to_integer(rotations)}
+    end)
+  end
+
   def part1(input) do
     p1_parse_input(input)
     |> Enum.reduce({0, 50}, fn tick, {count, position} ->
